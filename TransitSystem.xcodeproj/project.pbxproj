@@ -20,6 +20,11 @@
 		EE2D5614169689C8007D5E52 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D5613169689C8007D5E52 /* CityInfo.m */; };
 		EE2D561716968A26007D5E52 /* Transportation.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561616968A26007D5E52 /* Transportation.m */; };
 		EE2D561A16968A8B007D5E52 /* RouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561916968A8B007D5E52 /* RouteInfo.m */; };
+		EE2D561D1696ADF2007D5E52 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561C1696ADF2007D5E52 /* Login.m */; };
+		EE2D56201696AE1F007D5E52 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561F1696AE1F007D5E52 /* MapViewController.m */; };
+		EE2D56231696AE4B007D5E52 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D56221696AE4B007D5E52 /* SettingViewController.m */; };
+		EE2D56261696B8BC007D5E52 /* appBackGroundImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EE2D56251696B8BC007D5E52 /* appBackGroundImage.jpeg */; };
+		EE2D56281696BAF6007D5E52 /* back_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2D56271696BAF6007D5E52 /* back_image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,14 @@
 		EE2D561616968A26007D5E52 /* Transportation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transportation.m; sourceTree = "<group>"; };
 		EE2D561816968A8B007D5E52 /* RouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteInfo.h; sourceTree = "<group>"; };
 		EE2D561916968A8B007D5E52 /* RouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInfo.m; sourceTree = "<group>"; };
+		EE2D561B1696ADF2007D5E52 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		EE2D561C1696ADF2007D5E52 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		EE2D561E1696AE1F007D5E52 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		EE2D561F1696AE1F007D5E52 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		EE2D56211696AE4B007D5E52 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		EE2D56221696AE4B007D5E52 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		EE2D56251696B8BC007D5E52 /* appBackGroundImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = appBackGroundImage.jpeg; sourceTree = SOURCE_ROOT; };
+		EE2D56271696BAF6007D5E52 /* back_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_image.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +103,7 @@
 		EE2D55F6169688BF007D5E52 /* TransitSystem */ = {
 			isa = PBXGroup;
 			children = (
+				EE2D56241696B867007D5E52 /* images */,
 				EE2D560E16968955007D5E52 /* DataSrc */,
 				EE2D560D1696893B007D5E52 /* ViewSrc */,
 				EE2D55FF169688BF007D5E52 /* AppDelegate.h */,
@@ -116,6 +130,12 @@
 		EE2D560D1696893B007D5E52 /* ViewSrc */ = {
 			isa = PBXGroup;
 			children = (
+				EE2D561B1696ADF2007D5E52 /* Login.h */,
+				EE2D561C1696ADF2007D5E52 /* Login.m */,
+				EE2D561E1696AE1F007D5E52 /* MapViewController.h */,
+				EE2D561F1696AE1F007D5E52 /* MapViewController.m */,
+				EE2D56211696AE4B007D5E52 /* SettingViewController.h */,
+				EE2D56221696AE4B007D5E52 /* SettingViewController.m */,
 			);
 			name = ViewSrc;
 			sourceTree = "<group>";
@@ -133,6 +153,15 @@
 				EE2D561916968A8B007D5E52 /* RouteInfo.m */,
 			);
 			name = DataSrc;
+			sourceTree = "<group>";
+		};
+		EE2D56241696B867007D5E52 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EE2D56271696BAF6007D5E52 /* back_image.png */,
+				EE2D56251696B8BC007D5E52 /* appBackGroundImage.jpeg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +219,8 @@
 				EE2D5603169688C0007D5E52 /* Default.png in Resources */,
 				EE2D5605169688C0007D5E52 /* Default@2x.png in Resources */,
 				EE2D5607169688C0007D5E52 /* Default-568h@2x.png in Resources */,
+				EE2D56261696B8BC007D5E52 /* appBackGroundImage.jpeg in Resources */,
+				EE2D56281696BAF6007D5E52 /* back_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +237,9 @@
 				EE2D5614169689C8007D5E52 /* CityInfo.m in Sources */,
 				EE2D561716968A26007D5E52 /* Transportation.m in Sources */,
 				EE2D561A16968A8B007D5E52 /* RouteInfo.m in Sources */,
+				EE2D561D1696ADF2007D5E52 /* Login.m in Sources */,
+				EE2D56201696AE1F007D5E52 /* MapViewController.m in Sources */,
+				EE2D56231696AE4B007D5E52 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

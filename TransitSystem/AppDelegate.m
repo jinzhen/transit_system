@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Login.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    Login *login = [[Login alloc] init];
+    [self.window addSubview:login.view];
+    
     return YES;
 }
 
