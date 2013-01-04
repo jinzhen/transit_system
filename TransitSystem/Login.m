@@ -14,6 +14,8 @@
 #define USERNAMETEXTVIEW 111114
 #define USERPASSWORDTEXTVIEW 111115
 
+#define LOGIN_BUTTON_TAG 111116
+
 @implementation Login
 @synthesize userName = _userName;
 @synthesize userPassword = _userPassword;
@@ -42,14 +44,7 @@
     systemInfoTextView.tag = SYSTEMINFOTEXTVIEW_TAG;
     [self.view addSubview:systemInfoTextView];
     
-    UILabel *userNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, 60, 40)];
-    [userNameLabel setBackgroundColor:[UIColor clearColor]];
-    [userNameLabel setFont:[UIFont systemFontOfSize:16]];
-    [userNameLabel setText:@"NAME:"];
-    userNameLabel.tag = USERNAMELABEL;
-    [self.view addSubview:userNameLabel];
-    
-    UITextField *userNameTextView = [[UITextField alloc] initWithFrame:CGRectMake(100, 150, 180, 40)];
+    UITextField *userNameTextView = [[UITextField alloc] initWithFrame:CGRectMake(40, 150, 240, 40)];
     [userNameTextView setBackgroundColor:[UIColor whiteColor]];
     [userNameTextView setFont:[UIFont systemFontOfSize:20]];
     [userNameTextView setText:@"Your name"];
@@ -57,14 +52,7 @@
     userNameTextView.clearsOnBeginEditing = YES;
     [self.view addSubview:userNameTextView];
     
-    UILabel *userPasswordLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 230, 60, 40)];
-    [userPasswordLabel setBackgroundColor:[UIColor clearColor]];
-    [userPasswordLabel setFont:[UIFont systemFontOfSize:16]];
-    [userPasswordLabel setText:@"PAWD:"];
-    userPasswordLabel.tag = USERPASSWORDLABEL;
-    [self.view addSubview:userPasswordLabel];
-    
-    UITextField *userPasswordTextView = [[UITextField alloc] initWithFrame:CGRectMake(100, 230, 180, 40)];
+    UITextField *userPasswordTextView = [[UITextField alloc] initWithFrame:CGRectMake(40, 210, 240, 40)];
     [userPasswordTextView setBackgroundColor:[UIColor whiteColor]];
     [userPasswordTextView setFont:[UIFont systemFontOfSize:20]];
     [userPasswordTextView setText:@"Your password"];
@@ -72,9 +60,20 @@
     userPasswordTextView.clearsOnBeginEditing = YES;
     [self.view addSubview:userPasswordTextView];
     
+    UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 300, 240, 40)];
+    [loginButton setBackgroundImage: [UIImage imageNamed:@"login_normal"] forState:UIControlStateNormal];
+    [loginButton setBackgroundImage: [UIImage imageNamed:@"login_press"] forState:UIControlStateHighlighted];
+    [loginButton setTitle:@"LOGIN" forState:UIControlStateNormal];
+    loginButton.tag = LOGIN_BUTTON_TAG;
+    [self.view addSubview:loginButton];
+    
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"back_image.png"]];
     self.view.backgroundColor = background;
     
+}
+
+- (void)handleTapRecoginizer {
+//    [self.view becomeFirstResponder];
 }
 
 - (void)dealloc {
