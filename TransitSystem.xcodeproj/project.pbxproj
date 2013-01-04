@@ -16,6 +16,10 @@
 		EE2D5603169688C0007D5E52 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2D5602169688C0007D5E52 /* Default.png */; };
 		EE2D5605169688C0007D5E52 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2D5604169688C0007D5E52 /* Default@2x.png */; };
 		EE2D5607169688C0007D5E52 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2D5606169688C0007D5E52 /* Default-568h@2x.png */; };
+		EE2D5611169689A7007D5E52 /* PassengerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D5610169689A7007D5E52 /* PassengerInfo.m */; };
+		EE2D5614169689C8007D5E52 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D5613169689C8007D5E52 /* CityInfo.m */; };
+		EE2D561716968A26007D5E52 /* Transportation.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561616968A26007D5E52 /* Transportation.m */; };
+		EE2D561A16968A8B007D5E52 /* RouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561916968A8B007D5E52 /* RouteInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,14 @@
 		EE2D5602169688C0007D5E52 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		EE2D5604169688C0007D5E52 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		EE2D5606169688C0007D5E52 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EE2D560F169689A7007D5E52 /* PassengerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassengerInfo.h; sourceTree = "<group>"; };
+		EE2D5610169689A7007D5E52 /* PassengerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassengerInfo.m; sourceTree = "<group>"; };
+		EE2D5612169689C8007D5E52 /* CityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityInfo.h; sourceTree = "<group>"; };
+		EE2D5613169689C8007D5E52 /* CityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityInfo.m; sourceTree = "<group>"; };
+		EE2D561516968A26007D5E52 /* Transportation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transportation.h; sourceTree = "<group>"; };
+		EE2D561616968A26007D5E52 /* Transportation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transportation.m; sourceTree = "<group>"; };
+		EE2D561816968A8B007D5E52 /* RouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteInfo.h; sourceTree = "<group>"; };
+		EE2D561916968A8B007D5E52 /* RouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,8 @@
 		EE2D55F6169688BF007D5E52 /* TransitSystem */ = {
 			isa = PBXGroup;
 			children = (
+				EE2D560E16968955007D5E52 /* DataSrc */,
+				EE2D560D1696893B007D5E52 /* ViewSrc */,
 				EE2D55FF169688BF007D5E52 /* AppDelegate.h */,
 				EE2D5600169688BF007D5E52 /* AppDelegate.m */,
 				EE2D55F7169688BF007D5E52 /* Supporting Files */,
@@ -97,6 +111,28 @@
 				EE2D5606169688C0007D5E52 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE2D560D1696893B007D5E52 /* ViewSrc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewSrc;
+			sourceTree = "<group>";
+		};
+		EE2D560E16968955007D5E52 /* DataSrc */ = {
+			isa = PBXGroup;
+			children = (
+				EE2D560F169689A7007D5E52 /* PassengerInfo.h */,
+				EE2D5610169689A7007D5E52 /* PassengerInfo.m */,
+				EE2D5612169689C8007D5E52 /* CityInfo.h */,
+				EE2D5613169689C8007D5E52 /* CityInfo.m */,
+				EE2D561516968A26007D5E52 /* Transportation.h */,
+				EE2D561616968A26007D5E52 /* Transportation.m */,
+				EE2D561816968A8B007D5E52 /* RouteInfo.h */,
+				EE2D561916968A8B007D5E52 /* RouteInfo.m */,
+			);
+			name = DataSrc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +202,10 @@
 			files = (
 				EE2D55FD169688BF007D5E52 /* main.m in Sources */,
 				EE2D5601169688BF007D5E52 /* AppDelegate.m in Sources */,
+				EE2D5611169689A7007D5E52 /* PassengerInfo.m in Sources */,
+				EE2D5614169689C8007D5E52 /* CityInfo.m in Sources */,
+				EE2D561716968A26007D5E52 /* Transportation.m in Sources */,
+				EE2D561A16968A8B007D5E52 /* RouteInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
