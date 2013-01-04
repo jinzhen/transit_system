@@ -9,5 +9,8 @@
 #import "RouteInfo.h"
 
 @implementation RouteInfo
+@synthesize startPlace = _startPlace;
+@synthesize endPlace = _endPlace;
+@synthesize routeType = _routeType;
 
 @end

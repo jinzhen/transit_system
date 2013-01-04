@@ -26,10 +26,14 @@ typedef enum {
 
 
 @interface RouteInfo : NSObject {
-    ROUTE_QUALITY_TYPE routeType;
-    long int pathLenth;
-    Place *startPlace;
-    Place *endPlace;
+    ROUTE_QUALITY_TYPE *_routeType;
+    long int _pathLenth;
+    Place *_startPlace;
+    Place *_endPlace;
 }
+
+@property(nonatomic, assign)ROUTE_QUALITY_TYPE *routeType;
+@property(nonatomic, retain)Place *startPlace;
+@property(nonatomic, retain)Place *endPlace;
 
 @end
