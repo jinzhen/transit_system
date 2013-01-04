@@ -9,5 +9,8 @@
 #import "CityInfo.h"
 
 @implementation CityInfo
+@synthesize cityName = _cityName;
+@synthesize cityPlace = _cityPlace;
+
 
 @end

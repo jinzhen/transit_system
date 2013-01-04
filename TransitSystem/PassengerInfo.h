@@ -12,8 +12,10 @@
 
 @interface PassengerInfo : NSObject {
     NSString *_passengerName;
-    Place *_passengerLocation;
-    INTEGRITY_QUALITY_TYPE *passengerIntegrity;
+    Place *_passengerPlace;
+    INTEGRITY_QUALITY_TYPE *_passengerIntegrity;
 }
+@property(nonatomic, retain)NSString *passengerName;
+@property(nonatomic, retain)Place *passengerPlace;
 
 @end

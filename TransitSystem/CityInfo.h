@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface Place : NSObject {
-    float longitude;  //经度
-    float latitude;   //纬度
+    float _longitude;  //经度
+    float _latitude;   //纬度
 }
 
 @end
 
 @interface CityInfo : NSObject {
-    NSString *cityName;
-    Place *place;
+    NSString *_cityName;
+    Place *_cityPlace;
 }
-
+@property(nonatomic, retain)NSString *cityName;
+@property(nonatomic, retain)Place *cityPlace;
 @end

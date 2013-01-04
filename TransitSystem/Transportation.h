@@ -22,11 +22,11 @@ typedef enum {
 }INTEGRITY_QUALITY_TYPE;
 
 @interface Transportation : NSObject {
-    TRANSPORTATION_TYPE transportationType; 
-    float speed;
-    NSString *driverName;
-    INTEGRITY_QUALITY_TYPE driverIntegrity;  //驾驶员诚信度
+    TRANSPORTATION_TYPE *_transportationType;
+    float _speed;
+    NSString *_driverName;
+    INTEGRITY_QUALITY_TYPE *_driverIntegrity;  //驾驶员诚信度
     
 }
-
+@property(nonatomic, retain)NSString *driverName;
 @end

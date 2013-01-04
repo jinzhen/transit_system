@@ -9,5 +9,7 @@
 #import "Transportation.h"
 
 @implementation Transportation
+@synthesize driverName = _driverName;
+
 
 @end

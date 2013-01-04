@@ -9,5 +9,7 @@
 #import "PassengerInfo.h"
 
 @implementation PassengerInfo
+@synthesize passengerName = _passengerName;
+@synthesize passengerPlace = _passengerPlace;
 
 @end
