@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE1AF7371697E7E70043243D /* register_background_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF7351697E7E70043243D /* register_background_normal.png */; };
-		EE1AF7381697E7E70043243D /* register_background_press.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF7361697E7E70043243D /* register_background_press.png */; };
+		EE1AF7411697EB1A0043243D /* appBackGroundImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF73A1697EB1A0043243D /* appBackGroundImage.jpeg */; };
+		EE1AF7421697EB1A0043243D /* back_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF73B1697EB1A0043243D /* back_image.png */; };
+		EE1AF7431697EB1A0043243D /* input_background.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF73C1697EB1A0043243D /* input_background.png */; };
+		EE1AF7441697EB1A0043243D /* login_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF73D1697EB1A0043243D /* login_normal.png */; };
+		EE1AF7451697EB1A0043243D /* login_press.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF73E1697EB1A0043243D /* login_press.png */; };
+		EE1AF7461697EB1A0043243D /* register_background_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF73F1697EB1A0043243D /* register_background_normal.png */; };
+		EE1AF7471697EB1A0043243D /* register_background_press.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF7401697EB1A0043243D /* register_background_press.png */; };
 		EE2D55F1169688BF007D5E52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2D55F0169688BF007D5E52 /* UIKit.framework */; };
 		EE2D55F3169688BF007D5E52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2D55F2169688BF007D5E52 /* Foundation.framework */; };
 		EE2D55F5169688BF007D5E52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2D55F4169688BF007D5E52 /* CoreGraphics.framework */; };
@@ -25,18 +30,18 @@
 		EE2D561D1696ADF2007D5E52 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561C1696ADF2007D5E52 /* Login.m */; };
 		EE2D56201696AE1F007D5E52 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D561F1696AE1F007D5E52 /* MapViewController.m */; };
 		EE2D56231696AE4B007D5E52 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D56221696AE4B007D5E52 /* SettingViewController.m */; };
-		EE2D56261696B8BC007D5E52 /* appBackGroundImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EE2D56251696B8BC007D5E52 /* appBackGroundImage.jpeg */; };
-		EE2D56281696BAF6007D5E52 /* back_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2D56271696BAF6007D5E52 /* back_image.png */; };
-		EE2D562F1696D783007D5E52 /* login_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2D562D1696D783007D5E52 /* login_normal.png */; };
-		EE2D56301696D783007D5E52 /* login_press.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2D562E1696D783007D5E52 /* login_press.png */; };
 		EE9954691697D5DE0069FA45 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9954681697D5DE0069FA45 /* MapKit.framework */; };
 		EE99546C1697D5E80069FA45 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE99546B1697D5E80069FA45 /* CoreLocation.framework */; };
-		EEA61A5A1697BBB900CE1884 /* input_background.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA61A591697BBB900CE1884 /* input_background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE1AF7351697E7E70043243D /* register_background_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register_background_normal.png; sourceTree = SOURCE_ROOT; };
-		EE1AF7361697E7E70043243D /* register_background_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register_background_press.png; sourceTree = SOURCE_ROOT; };
+		EE1AF73A1697EB1A0043243D /* appBackGroundImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = appBackGroundImage.jpeg; path = images/appBackGroundImage.jpeg; sourceTree = SOURCE_ROOT; };
+		EE1AF73B1697EB1A0043243D /* back_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_image.png; path = images/back_image.png; sourceTree = SOURCE_ROOT; };
+		EE1AF73C1697EB1A0043243D /* input_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input_background.png; path = images/input_background.png; sourceTree = SOURCE_ROOT; };
+		EE1AF73D1697EB1A0043243D /* login_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_normal.png; path = images/login_normal.png; sourceTree = SOURCE_ROOT; };
+		EE1AF73E1697EB1A0043243D /* login_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_press.png; path = images/login_press.png; sourceTree = SOURCE_ROOT; };
+		EE1AF73F1697EB1A0043243D /* register_background_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_background_normal.png; path = images/register_background_normal.png; sourceTree = SOURCE_ROOT; };
+		EE1AF7401697EB1A0043243D /* register_background_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_background_press.png; path = images/register_background_press.png; sourceTree = SOURCE_ROOT; };
 		EE2D55EC169688BF007D5E52 /* TransitSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2D55F0169688BF007D5E52 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EE2D55F2169688BF007D5E52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,13 +69,8 @@
 		EE2D561F1696AE1F007D5E52 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		EE2D56211696AE4B007D5E52 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		EE2D56221696AE4B007D5E52 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		EE2D56251696B8BC007D5E52 /* appBackGroundImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = appBackGroundImage.jpeg; sourceTree = SOURCE_ROOT; };
-		EE2D56271696BAF6007D5E52 /* back_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_image.png; sourceTree = SOURCE_ROOT; };
-		EE2D562D1696D783007D5E52 /* login_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_normal.png; sourceTree = SOURCE_ROOT; };
-		EE2D562E1696D783007D5E52 /* login_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_press.png; sourceTree = SOURCE_ROOT; };
 		EE9954681697D5DE0069FA45 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EE99546B1697D5E80069FA45 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		EEA61A591697BBB900CE1884 /* input_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input_background.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,13 +176,13 @@
 		EE2D56241696B867007D5E52 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				EE1AF7351697E7E70043243D /* register_background_normal.png */,
-				EE1AF7361697E7E70043243D /* register_background_press.png */,
-				EEA61A591697BBB900CE1884 /* input_background.png */,
-				EE2D562D1696D783007D5E52 /* login_normal.png */,
-				EE2D562E1696D783007D5E52 /* login_press.png */,
-				EE2D56271696BAF6007D5E52 /* back_image.png */,
-				EE2D56251696B8BC007D5E52 /* appBackGroundImage.jpeg */,
+				EE1AF73A1697EB1A0043243D /* appBackGroundImage.jpeg */,
+				EE1AF73B1697EB1A0043243D /* back_image.png */,
+				EE1AF73C1697EB1A0043243D /* input_background.png */,
+				EE1AF73D1697EB1A0043243D /* login_normal.png */,
+				EE1AF73E1697EB1A0043243D /* login_press.png */,
+				EE1AF73F1697EB1A0043243D /* register_background_normal.png */,
+				EE1AF7401697EB1A0043243D /* register_background_press.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -242,13 +242,13 @@
 				EE2D5603169688C0007D5E52 /* Default.png in Resources */,
 				EE2D5605169688C0007D5E52 /* Default@2x.png in Resources */,
 				EE2D5607169688C0007D5E52 /* Default-568h@2x.png in Resources */,
-				EE2D56261696B8BC007D5E52 /* appBackGroundImage.jpeg in Resources */,
-				EE2D56281696BAF6007D5E52 /* back_image.png in Resources */,
-				EE2D562F1696D783007D5E52 /* login_normal.png in Resources */,
-				EE2D56301696D783007D5E52 /* login_press.png in Resources */,
-				EEA61A5A1697BBB900CE1884 /* input_background.png in Resources */,
-				EE1AF7371697E7E70043243D /* register_background_normal.png in Resources */,
-				EE1AF7381697E7E70043243D /* register_background_press.png in Resources */,
+				EE1AF7411697EB1A0043243D /* appBackGroundImage.jpeg in Resources */,
+				EE1AF7421697EB1A0043243D /* back_image.png in Resources */,
+				EE1AF7431697EB1A0043243D /* input_background.png in Resources */,
+				EE1AF7441697EB1A0043243D /* login_normal.png in Resources */,
+				EE1AF7451697EB1A0043243D /* login_press.png in Resources */,
+				EE1AF7461697EB1A0043243D /* register_background_normal.png in Resources */,
+				EE1AF7471697EB1A0043243D /* register_background_press.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
