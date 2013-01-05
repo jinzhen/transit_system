@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Login.h"
+#import "MapViewController.h"
 
 @implementation AppDelegate
 
@@ -21,6 +22,9 @@
     Login *login = [[Login alloc] init];
     self.window.rootViewController = login;
     [self.window addSubview:login.view];
+//    MapViewController *map = [[MapViewController alloc] init];
+//    [self.window addSubview:map.view];
+    
     
     return YES;
 }

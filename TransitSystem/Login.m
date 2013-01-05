@@ -7,14 +7,15 @@
 //
 
 #import "Login.h"
+#import "MapViewController.h"
 
 #define SYSTEMINFOTEXTVIEW_TAG 111111
-#define USERNAMELABEL 111112
-#define USERPASSWORDLABEL 111113
-#define USERNAMETEXTVIEW 111114
-#define USERPASSWORDTEXTVIEW 111115
+#define USER_NAME_TEXTVIEW 111114
+#define USER_PASSWORD_TEXTVIEW 111115
 
 #define LOGIN_BUTTON_TAG 111116
+#define REGISTER_BUTTON_TAG 111117
+#define FORGET_PASSWORD_BUTTON_TAG 111118
 
 @implementation Login
 @synthesize userName = _userName;
@@ -53,7 +54,7 @@
     userNameTextView.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     userNameTextView.clearButtonMode = UITextFieldViewModeUnlessEditing;
     userNameTextView.borderStyle=UITextBorderStyleRoundedRect;
-    userNameTextView.tag = USERNAMETEXTVIEW;
+    userNameTextView.tag = USER_NAME_TEXTVIEW;
     userNameTextView.clearsOnBeginEditing = YES;
     [scrollView addSubview:userNameTextView];
     
@@ -64,14 +65,37 @@
     userPasswordTextView.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     userPasswordTextView.clearButtonMode = UITextFieldViewModeUnlessEditing;
     userPasswordTextView.borderStyle=UITextBorderStyleRoundedRect;
-    userPasswordTextView.tag = USERPASSWORDTEXTVIEW;
+    userPasswordTextView.tag = USER_PASSWORD_TEXTVIEW;
     userPasswordTextView.clearsOnBeginEditing = YES;
     [scrollView addSubview:userPasswordTextView];
     
     
+    UIImage* registerImageNormal=[UIImage imageNamed:@"register_background_normal.png"];
+    UIImage* registerImagePress=[UIImage imageNamed:@"register_background_press.png"];
+    
+    UIButton *registerButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 240, 80, 20)];
+    [registerButton setBackgroundImage: registerImageNormal forState:UIControlStateNormal];
+    [registerButton setBackgroundImage: registerImagePress forState:UIControlStateHighlighted];
+    [registerButton setTitle:@"REGISTER" forState:UIControlStateNormal];
+    [registerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    registerButton.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+    registerButton.tag = REGISTER_BUTTON_TAG;
+    [registerButton addTarget:self action:@selector(handleRegister) forControlEvents:UIControlEventTouchUpInside];
+    [scrollView addSubview:registerButton];
+    
+    UIButton *forgetPasswordButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 240, 80, 20)];
+    [forgetPasswordButton setBackgroundImage: registerImageNormal forState:UIControlStateNormal];
+    [forgetPasswordButton setBackgroundImage: registerImagePress forState:UIControlStateHighlighted];
+    [forgetPasswordButton setTitle:@"FORGET?" forState:UIControlStateNormal];
+    [forgetPasswordButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    forgetPasswordButton.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+    forgetPasswordButton.tag = REGISTER_BUTTON_TAG;
+    [forgetPasswordButton addTarget:self action:@selector(handleForgetPassword) forControlEvents:UIControlEventTouchUpInside];
+    [scrollView addSubview:forgetPasswordButton];
+
+    
     UIImage* bgImageNormal=[[UIImage imageNamed:@"login_normal.png"] stretchableImageWithLeftCapWidth:16 topCapHeight:12];
     UIImage* bgImagePress=[[UIImage imageNamed:@"login_press.png"] stretchableImageWithLeftCapWidth:16 topCapHeight:12];
-
     UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 300, 240, 40)];
     [loginButton setBackgroundImage: bgImageNormal forState:UIControlStateNormal];
     [loginButton setBackgroundImage: bgImagePress forState:UIControlStateHighlighted];
@@ -91,8 +115,8 @@
 - (void)handleTapRecoginizer:(UITapGestureRecognizer *)tap {
     [self hidenKeyBoard];
     
-    UITextField *name = (UITextField *)[self.view viewWithTag:USERNAMETEXTVIEW];
-    UITextField *password = (UITextField *)[self.view viewWithTag:USERPASSWORDTEXTVIEW];
+    UITextField *name = (UITextField *)[self.view viewWithTag:USER_NAME_TEXTVIEW];
+    UITextField *password = (UITextField *)[self.view viewWithTag:USER_PASSWORD_TEXTVIEW];
     if ([name.text isEqualToString:@""]) {
         [name setText:@"Your name"];
     }else {
@@ -111,18 +135,28 @@
         }else {
             password.clearsOnBeginEditing = NO;
         }
-       
     }
+}
+
+- (void)handleRegister {
+    
+}
+
+- (void)handleForgetPassword {
+    
 }
 
 - (void)handleLogin {
     [self hidenKeyBoard];
     
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    [self.navigationController pushViewController:mapViewController animated:YES];
+    
 }
 
 - (void)hidenKeyBoard {
-    UITextField *name = (UITextField *)[self.view viewWithTag:USERNAMETEXTVIEW];
-    UITextField *password = (UITextField *)[self.view viewWithTag:USERPASSWORDTEXTVIEW];
+    UITextField *name = (UITextField *)[self.view viewWithTag:USER_NAME_TEXTVIEW];
+    UITextField *password = (UITextField *)[self.view viewWithTag:USER_PASSWORD_TEXTVIEW];
     
     [name resignFirstResponder];
     [password resignFirstResponder];
