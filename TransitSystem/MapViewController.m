@@ -9,6 +9,8 @@
 #import "MapViewController.h"
 #import "TSNavigationController.h"
 
+#define MENU_TAG 111111
+
 @implementation MapViewController
 @synthesize map = _map;
 @synthesize locationManager = _locationManager;
@@ -26,6 +28,7 @@
     
     [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu.png" ] action:@selector(handleMenu)];
     
+    [self createMenuView];
     
     self.map = [[MKMapView alloc] initWithFrame:[self.view bounds]];
     self.map.showsUserLocation = YES;
@@ -42,8 +45,31 @@
     [super viewDidLoad];
 }
 
-- (void)handleMenu {
+- (void)createMenuView {
+    UIView *menuView = [[UIView alloc] initWithFrame:CGRectMake(280, 0, 40, 150)];
+    menuView.tag = MENU_TAG;
+    UIImageView *settingItem = [self createMenuItemWithImageName:@"" action:@selector(handleSetting)];
+    [menuView addSubview:settingItem];
+    [settingItem setFrame:CGRectMake(0, 50, 40, 40)];
     
+    [self.view addSubview:menuView];
+    [menuView setHidden:YES];
+}
+
+- (UIImageView *)createMenuItemWithImageName:(NSString *)imageName action:(SEL)action {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName ]];
+    [imageView setFrame:CGRectMake(0, 0, 40, 40)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
+    [imageView addGestureRecognizer:tap];
+    return imageView;
+}
+
+- (void)handleMenu {
+    UIView *menuView = [self.view viewWithTag:MENU_TAG];
+    
+    if (menuView) {
+        [menuView setHidden:NO];
+    }
 }
 
 
