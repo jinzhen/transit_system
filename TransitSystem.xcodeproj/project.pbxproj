@@ -14,6 +14,8 @@
 		EE1AF7561697EC1E0043243D /* login_press.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF74F1697EC1E0043243D /* login_press.png */; };
 		EE1AF7571697EC1E0043243D /* register_background_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF7501697EC1E0043243D /* register_background_normal.png */; };
 		EE1AF7581697EC1E0043243D /* register_background_press.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF7511697EC1E0043243D /* register_background_press.png */; };
+		EE1AF75C1697EFAF0043243D /* TSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1AF75B1697EFAF0043243D /* TSNavigationController.m */; };
+		EE1AF75E1697FFCF0043243D /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF75D1697FFCF0043243D /* menu.png */; };
 		EE2D55F1169688BF007D5E52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2D55F0169688BF007D5E52 /* UIKit.framework */; };
 		EE2D55F3169688BF007D5E52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2D55F2169688BF007D5E52 /* Foundation.framework */; };
 		EE2D55F5169688BF007D5E52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2D55F4169688BF007D5E52 /* CoreGraphics.framework */; };
@@ -42,6 +44,9 @@
 		EE1AF74F1697EC1E0043243D /* login_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_press.png; path = images/login_images/login_press.png; sourceTree = SOURCE_ROOT; };
 		EE1AF7501697EC1E0043243D /* register_background_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_background_normal.png; path = images/login_images/register_background_normal.png; sourceTree = SOURCE_ROOT; };
 		EE1AF7511697EC1E0043243D /* register_background_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_background_press.png; path = images/login_images/register_background_press.png; sourceTree = SOURCE_ROOT; };
+		EE1AF75A1697EFAF0043243D /* TSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSNavigationController.h; path = PublicView/TSNavigationController.h; sourceTree = "<group>"; };
+		EE1AF75B1697EFAF0043243D /* TSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSNavigationController.m; path = PublicView/TSNavigationController.m; sourceTree = "<group>"; };
+		EE1AF75D1697FFCF0043243D /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = images/mapview_images/menu.png; sourceTree = SOURCE_ROOT; };
 		EE2D55EC169688BF007D5E52 /* TransitSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2D55F0169688BF007D5E52 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EE2D55F2169688BF007D5E52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,6 +111,7 @@
 		EE1AF7491697EBB20043243D /* mapview_images */ = {
 			isa = PBXGroup;
 			children = (
+				EE1AF75D1697FFCF0043243D /* menu.png */,
 			);
 			name = mapview_images;
 			sourceTree = "<group>";
@@ -115,6 +121,15 @@
 			children = (
 			);
 			name = setting_images;
+			sourceTree = "<group>";
+		};
+		EE1AF7591697EF150043243D /* PublicView */ = {
+			isa = PBXGroup;
+			children = (
+				EE1AF75A1697EFAF0043243D /* TSNavigationController.h */,
+				EE1AF75B1697EFAF0043243D /* TSNavigationController.m */,
+			);
+			name = PublicView;
 			sourceTree = "<group>";
 		};
 		EE2D55E1169688BF007D5E52 = {
@@ -149,6 +164,7 @@
 		EE2D55F6169688BF007D5E52 /* TransitSystem */ = {
 			isa = PBXGroup;
 			children = (
+				EE1AF7591697EF150043243D /* PublicView */,
 				EE2D56241696B867007D5E52 /* images */,
 				EE2D560E16968955007D5E52 /* DataSrc */,
 				EE2D560D1696893B007D5E52 /* ViewSrc */,
@@ -273,6 +289,7 @@
 				EE1AF7561697EC1E0043243D /* login_press.png in Resources */,
 				EE1AF7571697EC1E0043243D /* register_background_normal.png in Resources */,
 				EE1AF7581697EC1E0043243D /* register_background_press.png in Resources */,
+				EE1AF75E1697FFCF0043243D /* menu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +309,7 @@
 				EE2D561D1696ADF2007D5E52 /* Login.m in Sources */,
 				EE2D56201696AE1F007D5E52 /* MapViewController.m in Sources */,
 				EE2D56231696AE4B007D5E52 /* SettingViewController.m in Sources */,
+				EE1AF75C1697EFAF0043243D /* TSNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

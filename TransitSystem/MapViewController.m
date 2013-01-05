@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "TSNavigationController.h"
 
 @implementation MapViewController
 @synthesize map = _map;
@@ -21,6 +22,11 @@
 
 - (void)viewDidLoad {
     
+    [TSNavigationController setNavigationBar:self title:@"TRANSIT SYS" leftBtnTitle:nil rightBtnTitle:nil leftBtnAction:nil rightBtnAction:nil];
+    
+    [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu.png" ] action:@selector(handleMenu)];
+    
+    
     self.map = [[MKMapView alloc] initWithFrame:[self.view bounds]];
     self.map.showsUserLocation = YES;
     self.map.mapType =MKMapTypeStandard;
@@ -34,6 +40,10 @@
     
     
     [super viewDidLoad];
+}
+
+- (void)handleMenu {
+    
 }
 
 

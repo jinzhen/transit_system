@@ -8,6 +8,7 @@
 
 #import "Login.h"
 #import "MapViewController.h"
+#import "TSNavigationController.h"
 
 #define SYSTEMINFOTEXTVIEW_TAG 111111
 #define USER_NAME_TEXTVIEW 111114
@@ -32,11 +33,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [TSNavigationController setNavigationBar:self title:@"TRANSIT SYS" leftBtnTitle:nil rightBtnTitle:nil leftBtnAction:nil rightBtnAction:nil];
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [scrollView setBackgroundColor:[UIColor clearColor]];
     [scrollView setContentSize:CGSizeMake(320, 580)];
     scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.delegate = self;
     
 
     UILabel *systemInfoTextView = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 100)];
@@ -148,7 +151,7 @@
 
 - (void)handleLogin {
     [self hidenKeyBoard];
-    
+
     MapViewController *mapViewController = [[MapViewController alloc] init];
     [self.navigationController pushViewController:mapViewController animated:YES];
     
@@ -162,6 +165,9 @@
     [password resignFirstResponder];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self handleTapRecoginizer:nil];
+}
 - (void)dealloc {
     self.userName = nil;
     self.userPassword = nil;

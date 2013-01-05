@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TSNavigationController.h"
 #import "Login.h"
 #import "MapViewController.h"
 
@@ -20,8 +21,10 @@
     [self.window makeKeyAndVisible];
     
     Login *login = [[Login alloc] init];
-    self.window.rootViewController = login;
-    [self.window addSubview:login.view];
+    TSNavigationController *navigationController = [[TSNavigationController alloc] initWithRootViewController:login];
+    
+    self.window.rootViewController = navigationController;
+//    [self.window addSubview:login.view];
 //    MapViewController *map = [[MapViewController alloc] init];
 //    [self.window addSubview:map.view];
     

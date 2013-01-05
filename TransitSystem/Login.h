@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Login : UIViewController<UITextFieldDelegate> {
+@interface Login : UIViewController<UITextFieldDelegate, UIScrollViewDelegate> {
     NSString *_userName;
     NSString *_userPassword;
     int32_t userID;
