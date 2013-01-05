@@ -19,6 +19,7 @@
     [self.window makeKeyAndVisible];
     
     Login *login = [[Login alloc] init];
+    self.window.rootViewController = login;
     [self.window addSubview:login.view];
     
     return YES;
