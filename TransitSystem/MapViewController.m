@@ -29,7 +29,7 @@
     [super viewDidLoad];
     [TSNavigationController setNavigationBar:self title:@"TRANSIT SYS" leftBtnTitle:nil rightBtnTitle:nil leftBtnAction:nil rightBtnAction:nil];
     
-    [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu.png" ] action:@selector(handleMenu)];
+    [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu_up.png" ] action:@selector(handleMenu)];
     
     self.map = [[MKMapView alloc] initWithFrame:[self.view bounds]];
     self.map.showsUserLocation = YES;
@@ -46,26 +46,40 @@
 }
 
 - (void)createMenuView {
-    self.menu = [[TSMapViewMenu alloc] initWithFrame:CGRectMake(270, 42, 50, 150) rankType:RANK_V];
-    self.menu.backgroundColor = [UIColor redColor];
+    self.menu = [[TSMapViewMenu alloc] initWithFrame:CGRectMake(270, -150, 50, 150) rankType:RANK_V];
+    self.menu.backgroundColor = [UIColor clearColor];
     
     
     TSMenuItem *settingItem = [[TSMenuItem alloc] initWithImage:[UIImage imageNamed:@"setting.png"]];
-    [settingItem addTarget:self action:@selector(handleClickItem)];
+    [settingItem addTarget:self action:@selector(handleClickSettingItem)];
     [self.menu addItemToMenu:settingItem];
+    
+    
+    TSMenuItem *searchItem = [[TSMenuItem alloc] initWithImage:[UIImage imageNamed:@"search.png"]];
+    [searchItem addTarget:self action:@selector(handleClickSearchItem)];
+    [self.menu addItemToMenu:searchItem];
+
+    
+    
     [self.view addSubview:self.menu];
 }
 
 - (void)handleMenu {
     
-    if (self.menu.frame.size.height == 0) {
-        [TSCommonAnimations animationRetractableWithView:self.menu frame:CGRectMake(270, 42, 50, 150)];
+    if (self.menu.frame.origin.y < 0) {
+        [TSCommonAnimations animationWithShake:self.menu frame:CGRectMake(270, 42, 50, 150)];
+        [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu_down.png" ] action:@selector(handleMenu)];
     } else {
-        [TSCommonAnimations animationRetractableWithView:self.menu frame:CGRectMake(270, 42, 50, 0)];
+        [TSCommonAnimations animationWithShake:self.menu frame:CGRectMake(270, -150, 50, 150)];
+        [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu_up.png" ] action:@selector(handleMenu)];
     }
 }
 
-- (void)handleClickItem {
+- (void)handleClickSettingItem {
+    
+}
+
+- (void)handleClickSearchItem {
     
 }
 

@@ -75,6 +75,7 @@
 
 - (id)initWithFrame:(CGRect)frame rankType:(RANK_TYPE)rank{
     if (self = [super init]) {
+        _itemCount = 0;
         self.menuFrame = frame;
         self.frame = frame;
         rankType = rank;
@@ -92,13 +93,12 @@
 - (void)addItemToMenu:(TSMenuItem *)item {
     CGRect itemFrame;
     if (rankType == RANK_H) {
-        itemFrame = CGRectMake(5.0f, 5.0f, self.frame.size.height - 10.0f, self.frame.size.height - 10.0f); 
+        itemFrame = CGRectMake(_itemCount * (self.frame.size.height - 10.0f + 5.0f) + 5.0f, 5.0f, self.frame.size.height - 10.0f, self.frame.size.height - 10.0f);
     }else {
-        itemFrame = CGRectMake(5.0f, 5.0f, self.frame.size.width - 10.0f, self.frame.size.width - 10.0f);
+        itemFrame = CGRectMake(5.0f, _itemCount * (self.frame.size.width - 10.0f - 5.0f) + 5.0f, self.frame.size.width - 10.0f, self.frame.size.width - 10.0f);
     }
     
     [item setFrame:itemFrame];
-    [item setBackgroundColor:[UIColor blueColor]];
     [self addSubview:item];
     [self.imageViewItems addObject:item];
     _itemCount++;
