@@ -10,14 +10,17 @@
 #import <MapKit/MapKit.h> 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "TSMapViewMenu.h"
 
 @interface MapViewController : UIViewController {
     MKMapView *_map;
+    TSMapViewMenu *_menu;
     CLLocationManager *_locationManager;
 }
 
 @property(nonatomic, retain)MKMapView *map;
 @property(nonatomic, retain)CLLocationManager *locationManager;
+@property(nonatomic, retain)TSMapViewMenu *menu;
 
 
 - (id)init;

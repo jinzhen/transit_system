@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE114313169A6F13002B75AA /* TSCommonAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = EE114312169A6F13002B75AA /* TSCommonAnimations.m */; };
+		EE114318169A7C2F002B75AA /* TSMapViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EE114317169A7C2F002B75AA /* TSMapViewMenu.m */; };
+		EE11431A169AA6AE002B75AA /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = EE114319169AA6AE002B75AA /* setting.png */; };
 		EE1AF7521697EC1E0043243D /* appBackGroundImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF74B1697EC1E0043243D /* appBackGroundImage.jpeg */; };
 		EE1AF7531697EC1E0043243D /* back_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF74C1697EC1E0043243D /* back_image.png */; };
 		EE1AF7541697EC1E0043243D /* input_background.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1AF74D1697EC1E0043243D /* input_background.png */; };
@@ -37,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE114311169A6F13002B75AA /* TSCommonAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCommonAnimations.h; sourceTree = "<group>"; };
+		EE114312169A6F13002B75AA /* TSCommonAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCommonAnimations.m; sourceTree = "<group>"; };
+		EE114316169A7C2F002B75AA /* TSMapViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMapViewMenu.h; sourceTree = "<group>"; };
+		EE114317169A7C2F002B75AA /* TSMapViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMapViewMenu.m; sourceTree = "<group>"; };
+		EE114319169AA6AE002B75AA /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = images/setting_images/setting.png; sourceTree = SOURCE_ROOT; };
 		EE1AF74B1697EC1E0043243D /* appBackGroundImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = appBackGroundImage.jpeg; path = images/login_images/appBackGroundImage.jpeg; sourceTree = SOURCE_ROOT; };
 		EE1AF74C1697EC1E0043243D /* back_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_image.png; path = images/login_images/back_image.png; sourceTree = SOURCE_ROOT; };
 		EE1AF74D1697EC1E0043243D /* input_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input_background.png; path = images/login_images/input_background.png; sourceTree = SOURCE_ROOT; };
@@ -94,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE114315169A7BFD002B75AA /* subView */ = {
+			isa = PBXGroup;
+			children = (
+				EE114316169A7C2F002B75AA /* TSMapViewMenu.h */,
+				EE114317169A7C2F002B75AA /* TSMapViewMenu.m */,
+			);
+			name = subView;
+			sourceTree = "<group>";
+		};
 		EE1AF7481697EB880043243D /* login_images */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +136,7 @@
 		EE1AF74A1697EBC80043243D /* setting_images */ = {
 			isa = PBXGroup;
 			children = (
+				EE114319169AA6AE002B75AA /* setting.png */,
 			);
 			name = setting_images;
 			sourceTree = "<group>";
@@ -192,12 +210,15 @@
 		EE2D560D1696893B007D5E52 /* ViewSrc */ = {
 			isa = PBXGroup;
 			children = (
+				EE114315169A7BFD002B75AA /* subView */,
 				EE2D561B1696ADF2007D5E52 /* Login.h */,
 				EE2D561C1696ADF2007D5E52 /* Login.m */,
 				EE2D561E1696AE1F007D5E52 /* MapViewController.h */,
 				EE2D561F1696AE1F007D5E52 /* MapViewController.m */,
 				EE2D56211696AE4B007D5E52 /* SettingViewController.h */,
 				EE2D56221696AE4B007D5E52 /* SettingViewController.m */,
+				EE114311169A6F13002B75AA /* TSCommonAnimations.h */,
+				EE114312169A6F13002B75AA /* TSCommonAnimations.m */,
 			);
 			name = ViewSrc;
 			sourceTree = "<group>";
@@ -290,6 +311,7 @@
 				EE1AF7571697EC1E0043243D /* register_background_normal.png in Resources */,
 				EE1AF7581697EC1E0043243D /* register_background_press.png in Resources */,
 				EE1AF75E1697FFCF0043243D /* menu.png in Resources */,
+				EE11431A169AA6AE002B75AA /* setting.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +332,8 @@
 				EE2D56201696AE1F007D5E52 /* MapViewController.m in Sources */,
 				EE2D56231696AE4B007D5E52 /* SettingViewController.m in Sources */,
 				EE1AF75C1697EFAF0043243D /* TSNavigationController.m in Sources */,
+				EE114313169A6F13002B75AA /* TSCommonAnimations.m in Sources */,
+				EE114318169A7C2F002B75AA /* TSMapViewMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

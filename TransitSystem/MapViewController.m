@@ -8,12 +8,15 @@
 
 #import "MapViewController.h"
 #import "TSNavigationController.h"
+#import "TSCommonAnimations.h"
+#import "TSMapViewMenu.h"
 
 #define MENU_TAG 111111
 
 @implementation MapViewController
 @synthesize map = _map;
 @synthesize locationManager = _locationManager;
+@synthesize menu = _menu;
 
 - (id)init {
     if (self = [super init]) {
@@ -23,12 +26,10 @@
 }
 
 - (void)viewDidLoad {
-    
+    [super viewDidLoad];
     [TSNavigationController setNavigationBar:self title:@"TRANSIT SYS" leftBtnTitle:nil rightBtnTitle:nil leftBtnAction:nil rightBtnAction:nil];
     
     [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu.png" ] action:@selector(handleMenu)];
-    
-    [self createMenuView];
     
     self.map = [[MKMapView alloc] initWithFrame:[self.view bounds]];
     self.map.showsUserLocation = YES;
@@ -41,40 +42,37 @@
     MKCoordinateRegion region = MKCoordinateRegionMake(coords, MKCoordinateSpanMake(zoomLevel, zoomLevel));
     [self.map setRegion:[self.map regionThatFits:region] animated:YES];
     
-    
-    [super viewDidLoad];
+    [self createMenuView];
 }
 
 - (void)createMenuView {
-    UIView *menuView = [[UIView alloc] initWithFrame:CGRectMake(280, 0, 40, 150)];
-    menuView.tag = MENU_TAG;
-    UIImageView *settingItem = [self createMenuItemWithImageName:@"" action:@selector(handleSetting)];
-    [menuView addSubview:settingItem];
-    [settingItem setFrame:CGRectMake(0, 50, 40, 40)];
+    self.menu = [[TSMapViewMenu alloc] initWithFrame:CGRectMake(270, -150, 50, 150) rankType:RANK_V];
+    self.menu.backgroundColor = [UIColor redColor];
     
-    [self.view addSubview:menuView];
-    [menuView setHidden:YES];
-}
-
-- (UIImageView *)createMenuItemWithImageName:(NSString *)imageName action:(SEL)action {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName ]];
-    [imageView setFrame:CGRectMake(0, 0, 40, 40)];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
-    [imageView addGestureRecognizer:tap];
-    return imageView;
+    
+    TSMenuItem *settingItem = [[TSMenuItem alloc] initWithImage:[UIImage imageNamed:@"setting.png"]];
+    [settingItem addTarget:self action:@selector(handleClickItem)];
+    [self.menu addItemToMenu:settingItem];
+    [self.view addSubview:self.menu];
 }
 
 - (void)handleMenu {
-    UIView *menuView = [self.view viewWithTag:MENU_TAG];
     
-    if (menuView) {
-        [menuView setHidden:NO];
+    if (self.menu.frame.origin.y < 0) {
+        [TSCommonAnimations animationWithShake:self.menu frame:CGRectMake(270, 40, 50, 150)];
+    } else {
+        [TSCommonAnimations animationWithShake:self.menu frame:CGRectMake(270, -150, 50, 150)];
     }
+}
+
+- (void)handleClickItem {
+    
 }
 
 
 - (void)dealloc {
     self.map = nil;
+    self.menu = nil;
 }
 
 @end
