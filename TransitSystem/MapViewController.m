@@ -32,17 +32,36 @@
     [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu_up.png" ] action:@selector(handleMenu)];
     
     self.map = [[MKMapView alloc] initWithFrame:[self.view bounds]];
-    self.map.showsUserLocation = YES;
+//    self.map.showsUserLocation = YES;
     self.map.mapType =MKMapTypeStandard;
     [self.view addSubview:self.map];
     
-    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(39.915352,116.397105);
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
     
-    float zoomLevel = 0.02;
-    MKCoordinateRegion region = MKCoordinateRegionMake(coords, MKCoordinateSpanMake(zoomLevel, zoomLevel));
-    [self.map setRegion:[self.map regionThatFits:region] animated:YES];
     
     [self createMenuView];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [self.locationManager stopUpdatingLocation];
+    
+    NSString *strLat = [NSString stringWithFormat:@"%.4f",newLocation.coordinate.latitude];
+    NSString *strLng = [NSString stringWithFormat:@"%.4f",newLocation.coordinate.longitude];
+    NSLog(@"Lat: %@  Lng: %@", strLat, strLng);
+    
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(newLocation.coordinate.latitude,newLocation.coordinate.longitude);
+    float zoomLevel = 0.02;
+    MKCoordinateRegion region = MKCoordinateRegionMake(coords,MKCoordinateSpanMake(zoomLevel, zoomLevel));
+    [self.map setRegion:[self.map regionThatFits:region] animated:YES];
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"locError:%@", error);
+    
 }
 
 - (void)createMenuView {

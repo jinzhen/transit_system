@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "TSMapViewMenu.h"
 
-@interface MapViewController : UIViewController {
+@interface MapViewController : UIViewController<CLLocationManagerDelegate> {
     MKMapView *_map;
     TSMapViewMenu *_menu;
     CLLocationManager *_locationManager;
