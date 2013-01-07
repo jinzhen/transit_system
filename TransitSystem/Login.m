@@ -70,6 +70,7 @@
     userPasswordTextView.borderStyle=UITextBorderStyleRoundedRect;
     userPasswordTextView.tag = USER_PASSWORD_TEXTVIEW;
     userPasswordTextView.clearsOnBeginEditing = YES;
+    userPasswordTextView.delegate = self;
     [scrollView addSubview:userPasswordTextView];
     
     
@@ -131,11 +132,14 @@
     }
     
     if ([password.text isEqualToString:@""]) {
+        password.secureTextEntry = NO;
         [password setText:@"Your password"];
     }else {
         if ([password.text isEqualToString:@"Your password"]) {
+            password.secureTextEntry = NO;
             password.clearsOnBeginEditing = YES;
         }else {
+            password.secureTextEntry = YES;
             password.clearsOnBeginEditing = NO;
         }
     }
@@ -168,6 +172,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self handleTapRecoginizer:nil];
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    textField.secureTextEntry = YES;
+    
+    return YES;
+}
+
 - (void)dealloc {
     self.userName = nil;
     self.userPassword = nil;
