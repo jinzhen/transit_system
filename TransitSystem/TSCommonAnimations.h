@@ -25,5 +25,6 @@ typedef enum {
 @interface TSCommonAnimations : NSObject
 
 + (void)animationWithShake:(UIView *)view frame:(CGRect)frame;
++ (void)animationRetractableWithView:(UIView *)view frame:(CGRect)frame;
 
 @end

@@ -46,7 +46,7 @@
 }
 
 - (void)createMenuView {
-    self.menu = [[TSMapViewMenu alloc] initWithFrame:CGRectMake(270, -150, 50, 150) rankType:RANK_V];
+    self.menu = [[TSMapViewMenu alloc] initWithFrame:CGRectMake(270, 42, 50, 150) rankType:RANK_V];
     self.menu.backgroundColor = [UIColor redColor];
     
     
@@ -58,10 +58,10 @@
 
 - (void)handleMenu {
     
-    if (self.menu.frame.origin.y < 0) {
-        [TSCommonAnimations animationWithShake:self.menu frame:CGRectMake(270, 40, 50, 150)];
+    if (self.menu.frame.size.height == 0) {
+        [TSCommonAnimations animationRetractableWithView:self.menu frame:CGRectMake(270, 42, 50, 150)];
     } else {
-        [TSCommonAnimations animationWithShake:self.menu frame:CGRectMake(270, -150, 50, 150)];
+        [TSCommonAnimations animationRetractableWithView:self.menu frame:CGRectMake(270, 42, 50, 0)];
     }
 }
 

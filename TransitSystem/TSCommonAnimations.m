@@ -57,5 +57,50 @@
     return currentFrame;
 }
 
++ (void)animationRetractableWithView:(UIView *)view frame:(CGRect)frame {
+    CGRect currentViewFrame = view.frame;
+    
+    [UIView animateWithDuration:0.15f animations:^{
+        [view setFrame:frame];
+        
+    }
+                     completion:^(BOOL finished){
+                         if (finished) {
+                             [UIView animateWithDuration:0.05f animations:^{
+                                 [view setFrame:[self animationRetractableDeriction:currentViewFrame newFrame:frame]];
+                             }
+                                              completion:^(BOOL finished){
+                                                  if (finished) {
+                                                      [UIView animateWithDuration:0.15f animations:^{
+                                                          [view setFrame:frame];
+                                                          
+                                                      }
+                                                                       completion:^(BOOL finished){
+                                                                           if (finished) {
+                                                                               
+                                                                           }
+                                                                       }];
+                                                  }
+                                              }];
+                         }
+                     }];
+}
+
++ (CGRect)animationRetractableDeriction:(CGRect)currentFrame newFrame:(CGRect)newFrame {
+    if (currentFrame.size.width < newFrame.size.width) {
+        return CGRectMake(currentFrame.origin.x, newFrame.origin.y, newFrame.size.width - newFrame.size.width / 3, newFrame.size.height);
+    }else if (currentFrame.size.width > newFrame.size.width) {
+        return CGRectMake(currentFrame.origin.x, newFrame.origin.y, newFrame.size.width - newFrame.size.width / 3, newFrame.size.height);
+    }
+    
+    if (currentFrame.size.height < newFrame.size.height) {
+        return CGRectMake(newFrame.origin.x, newFrame.origin.y, newFrame.size.width, newFrame.size.height - newFrame.size.height / 3.0f);
+    }else if (currentFrame.size.height > newFrame.size.height) {
+        return newFrame;
+    }
+    
+    return currentFrame;
+}
+
 
 @end
