@@ -45,6 +45,8 @@
 		EEA25FD7169BFDB500C3ACF3 /* IntegrityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FD6169BFDB500C3ACF3 /* IntegrityView.m */; };
 		EEA25FDB169C093400C3ACF3 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FDA169C093400C3ACF3 /* AsyncSocket.m */; };
 		EEA25FDD169C0E0E00C3ACF3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA25FDC169C0E0E00C3ACF3 /* CFNetwork.framework */; };
+		EEA25FE0169C116D00C3ACF3 /* DataTransmission.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FDF169C116D00C3ACF3 /* DataTransmission.m */; };
+		EEA25FE3169C1A8400C3ACF3 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FE2169C1A8400C3ACF3 /* AsyncUdpSocket.m */; };
 		EEA60617169AC6460016D2E5 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60616169AC6460016D2E5 /* search.png */; };
 		EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60619169AC9480016D2E5 /* menu_down.png */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,10 @@
 		EEA25FD9169C093400C3ACF3 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = opensource/AsyncSocket.h; sourceTree = "<group>"; };
 		EEA25FDA169C093400C3ACF3 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = opensource/AsyncSocket.m; sourceTree = "<group>"; };
 		EEA25FDC169C0E0E00C3ACF3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EEA25FDE169C116D00C3ACF3 /* DataTransmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTransmission.h; sourceTree = "<group>"; };
+		EEA25FDF169C116D00C3ACF3 /* DataTransmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTransmission.m; sourceTree = "<group>"; };
+		EEA25FE1169C1A8400C3ACF3 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		EEA25FE2169C1A8400C3ACF3 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		EEA60616169AC6460016D2E5 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = images/search.png; sourceTree = SOURCE_ROOT; };
 		EEA60619169AC9480016D2E5 /* menu_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_down.png; path = images/mapview_images/menu_down.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -275,6 +281,8 @@
 				EE2D561916968A8B007D5E52 /* RouteInfo.m */,
 				EEA25FD2169BC74B00C3ACF3 /* DriverInfo.h */,
 				EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */,
+				EEA25FDE169C116D00C3ACF3 /* DataTransmission.h */,
+				EEA25FDF169C116D00C3ACF3 /* DataTransmission.m */,
 			);
 			name = DataSrc;
 			sourceTree = "<group>";
@@ -293,6 +301,8 @@
 		EEA25FD8169C091900C3ACF3 /* OpenSource */ = {
 			isa = PBXGroup;
 			children = (
+				EEA25FE1169C1A8400C3ACF3 /* AsyncUdpSocket.h */,
+				EEA25FE2169C1A8400C3ACF3 /* AsyncUdpSocket.m */,
 				EEA25FD9169C093400C3ACF3 /* AsyncSocket.h */,
 				EEA25FDA169C093400C3ACF3 /* AsyncSocket.m */,
 			);
@@ -394,6 +404,8 @@
 				EEA25FD4169BC74B00C3ACF3 /* DriverInfo.m in Sources */,
 				EEA25FD7169BFDB500C3ACF3 /* IntegrityView.m in Sources */,
 				EEA25FDB169C093400C3ACF3 /* AsyncSocket.m in Sources */,
+				EEA25FE0169C116D00C3ACF3 /* DataTransmission.m in Sources */,
+				EEA25FE3169C1A8400C3ACF3 /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
