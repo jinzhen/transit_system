@@ -11,6 +11,7 @@
 #import "TSCommonAnimations.h"
 #import "TSMapViewMenu.h"
 #import "MapPoint.h"
+#import "TSAnnotationView.h"
 
 #define MENU_TAG 111111
 
@@ -60,8 +61,8 @@
 //    [mv setRegion:region animated:YES];
 //}
 
-- (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation
-{
+- (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation {
+    
     CLLocationCoordinate2D userCoordinate = userLocation.location.coordinate;
     for(int i = 1; i <= 5; i++)
     {
@@ -73,6 +74,57 @@
     }
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation>)annotation {
+    
+    if([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    NSString *annotationIdentifier = @"PinViewAnnotation";
+    TSAnnotationView *pinView = (TSAnnotationView *) [self.map dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+
+    if (!pinView) {
+        pinView = [[TSAnnotationView alloc] initWithAnnotation:annotation
+                                                  reuseIdentifier:annotationIdentifier];
+
+        pinView.canShowCallout = YES;
+        UIImageView *taxiIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"taxi.png"]];
+        [taxiIconView setFrame:CGRectMake(0, 0, 80, 80)];
+        pinView.leftCalloutAccessoryView = taxiIconView;
+    }else {
+        pinView.annotation = annotation;
+    }
+
+    return pinView;
+
+}
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+//    CGRect visibleRect = [mapView annotationVisibleRect];
+//
+//    for(MKAnnotationView *view in views){
+//
+//        if([view isKindOfClass:[TSAnnotationView class]]){
+//
+//            CGRect endFrame = view.frame;
+//
+//            CGRect startFrame = endFrame;
+//            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height;
+//            view.frame = startFrame;
+//            [UIView beginAnimations:@"drop" context:NULL];
+//            [UIView setAnimationDuration:2];
+//            view.frame = endFrame;
+//            [UIView commitAnimations];
+//        }
+//    }
+//    MKAnnotationView *annotationView = [views objectAtIndex:0];
+//    id<MKAnnotation> mp = [annotationView annotation];
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,500,500);
+//    [self.map setRegion:region animated:YES];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+}
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

@@ -9,7 +9,16 @@
 #import "Transportation.h"
 
 @implementation Transportation
-@synthesize driverName = _driverName;
+@synthesize transportationID = _transportationID;
+@synthesize driver = _driver;
 
+- (id)initWithTransportationID:(NSString *)transID driverInfo:(DriverInfo *)driver {
+    if (self = [super init]) {
+        self.driver = driver;
+        self.transportationID = transID;
+    }
+    
+    return self;
+}
 
 @end

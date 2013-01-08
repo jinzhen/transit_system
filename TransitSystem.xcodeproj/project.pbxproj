@@ -38,6 +38,10 @@
 		EE9954691697D5DE0069FA45 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9954681697D5DE0069FA45 /* MapKit.framework */; };
 		EE99546C1697D5E80069FA45 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE99546B1697D5E80069FA45 /* CoreLocation.framework */; };
 		EEA25FC7169BADA800C3ACF3 /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FC6169BADA800C3ACF3 /* MapPoint.m */; };
+		EEA25FCA169BBAC800C3ACF3 /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA25FC9169BBAC800C3ACF3 /* taxi.png */; };
+		EEA25FCD169BBD8C00C3ACF3 /* TSAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FCC169BBD8C00C3ACF3 /* TSAnnotationView.m */; };
+		EEA25FD0169BC57500C3ACF3 /* TSTransportationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FCF169BC57500C3ACF3 /* TSTransportationView.m */; };
+		EEA25FD4169BC74B00C3ACF3 /* DriverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */; };
 		EEA60617169AC6460016D2E5 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60616169AC6460016D2E5 /* search.png */; };
 		EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60619169AC9480016D2E5 /* menu_down.png */; };
 /* End PBXBuildFile section */
@@ -89,6 +93,13 @@
 		EE99546B1697D5E80069FA45 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EEA25FC5169BADA800C3ACF3 /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPoint.h; sourceTree = "<group>"; };
 		EEA25FC6169BADA800C3ACF3 /* MapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPoint.m; sourceTree = "<group>"; };
+		EEA25FC9169BBAC800C3ACF3 /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taxi.png; path = images/mapview_images/taxi.png; sourceTree = SOURCE_ROOT; };
+		EEA25FCB169BBD8C00C3ACF3 /* TSAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAnnotationView.h; sourceTree = "<group>"; };
+		EEA25FCC169BBD8C00C3ACF3 /* TSAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAnnotationView.m; sourceTree = "<group>"; };
+		EEA25FCF169BC57500C3ACF3 /* TSTransportationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTransportationView.m; sourceTree = "<group>"; };
+		EEA25FD1169BC6FD00C3ACF3 /* TSTransportationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTransportationView.h; sourceTree = "<group>"; };
+		EEA25FD2169BC74B00C3ACF3 /* DriverInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverInfo.h; sourceTree = "<group>"; };
+		EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverInfo.m; sourceTree = "<group>"; };
 		EEA60616169AC6460016D2E5 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = images/search.png; sourceTree = SOURCE_ROOT; };
 		EEA60619169AC9480016D2E5 /* menu_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_down.png; path = images/mapview_images/menu_down.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -116,6 +127,10 @@
 				EE114317169A7C2F002B75AA /* TSMapViewMenu.m */,
 				EEA25FC5169BADA800C3ACF3 /* MapPoint.h */,
 				EEA25FC6169BADA800C3ACF3 /* MapPoint.m */,
+				EEA25FCB169BBD8C00C3ACF3 /* TSAnnotationView.h */,
+				EEA25FCC169BBD8C00C3ACF3 /* TSAnnotationView.m */,
+				EEA25FD1169BC6FD00C3ACF3 /* TSTransportationView.h */,
+				EEA25FCF169BC57500C3ACF3 /* TSTransportationView.m */,
 			);
 			name = subView;
 			sourceTree = "<group>";
@@ -137,6 +152,7 @@
 		EE1AF7491697EBB20043243D /* mapview_images */ = {
 			isa = PBXGroup;
 			children = (
+				EEA25FC9169BBAC800C3ACF3 /* taxi.png */,
 				EEA60619169AC9480016D2E5 /* menu_down.png */,
 				EE1AF75D1697FFCF0043243D /* menu_up.png */,
 			);
@@ -244,6 +260,8 @@
 				EE2D561616968A26007D5E52 /* Transportation.m */,
 				EE2D561816968A8B007D5E52 /* RouteInfo.h */,
 				EE2D561916968A8B007D5E52 /* RouteInfo.m */,
+				EEA25FD2169BC74B00C3ACF3 /* DriverInfo.h */,
+				EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */,
 			);
 			name = DataSrc;
 			sourceTree = "<group>";
@@ -325,6 +343,7 @@
 				EE11431A169AA6AE002B75AA /* setting.png in Resources */,
 				EEA60617169AC6460016D2E5 /* search.png in Resources */,
 				EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */,
+				EEA25FCA169BBAC800C3ACF3 /* taxi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +367,9 @@
 				EE114313169A6F13002B75AA /* TSCommonAnimations.m in Sources */,
 				EE114318169A7C2F002B75AA /* TSMapViewMenu.m in Sources */,
 				EEA25FC7169BADA800C3ACF3 /* MapPoint.m in Sources */,
+				EEA25FCD169BBD8C00C3ACF3 /* TSAnnotationView.m in Sources */,
+				EEA25FD0169BC57500C3ACF3 /* TSTransportationView.m in Sources */,
+				EEA25FD4169BC74B00C3ACF3 /* DriverInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
