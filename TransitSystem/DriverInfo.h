@@ -27,6 +27,7 @@ typedef enum {
     NSString *_driverID; //身份证
     NSString *_name;
     int _age;
+    UIImage *_headImage;
     GENDER_TYPE _gender;
     int _driverYears;
     BOOL _isHaveInfractionsHistory; //违规历史记录
@@ -35,7 +36,11 @@ typedef enum {
 
 @property(nonatomic, retain)NSString *name;
 @property(nonatomic, retain)NSString *driverID;
+@property(nonatomic, retain)UIImage *headImage;
+@property(nonatomic, assign)GENDER_TYPE gender;
+@property(nonatomic, assign)int age;
+@property(nonatomic, assign)int driverYears;
 
-- (id)initWithName:(NSString *)name driverID:(NSString *)driverId sex:(GENDER_TYPE)sex;
+- (id)initWithName:(NSString *)name driverID:(NSString *)driverId headImage:(UIImage *)image sex:(GENDER_TYPE)sex;
 
 @end

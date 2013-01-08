@@ -11,8 +11,12 @@
 @implementation DriverInfo
 @synthesize name = _name;
 @synthesize driverID = _driverID;
+@synthesize headImage = _headImage;
+@synthesize gender = _gender;
+@synthesize age = _age;
+@synthesize driverYears = _driverYears;
 
-- (id)initWithName:(NSString *)name driverID:(NSString *)driverId sex:(GENDER_TYPE)sex {
+- (id)initWithName:(NSString *)name driverID:(NSString *)driverId headImage:(UIImage *)image sex:(GENDER_TYPE)sex {
     if (self = [super init]) {
         self.name = name;
         self.driverID = driverId;

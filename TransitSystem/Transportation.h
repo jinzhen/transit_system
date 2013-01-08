@@ -18,6 +18,8 @@ typedef enum {
 
 @interface Transportation : NSObject {
     NSString *_transportationID;   //车牌号
+    NSString *_carTypeInfo;
+    UIImage *_carImage;
     TRANSPORTATION_TYPE *_transportationType;
     float _averageSpeed;
     
@@ -25,7 +27,9 @@ typedef enum {
 }
 @property(nonatomic, retain)DriverInfo *driver;
 @property(nonatomic, retain)NSString *transportationID;
+@property(nonatomic, retain)NSString *carTypeInfo;
+@property(nonatomic, retain)UIImage *carImage;
 
-- (id)initWithTransportationID:(NSString *)transID driverInfo:(DriverInfo *)driver;
+- (id)initWithTransportationID:(NSString *)transID driverInfo:(DriverInfo *)driver carImage:(UIImage *)carImg carInfo:(NSString *)carInfo;
 
 @end

@@ -11,11 +11,14 @@
 @implementation Transportation
 @synthesize transportationID = _transportationID;
 @synthesize driver = _driver;
+@synthesize carTypeInfo = _carTypeInfo;
 
-- (id)initWithTransportationID:(NSString *)transID driverInfo:(DriverInfo *)driver {
+- (id)initWithTransportationID:(NSString *)transID driverInfo:(DriverInfo *)driver carImage:(UIImage *)carImg carInfo:(NSString *)carInfo {
     if (self = [super init]) {
         self.driver = driver;
         self.transportationID = transID;
+        self.carImage = carImg;
+        self.carTypeInfo = carInfo;
     }
     
     return self;
