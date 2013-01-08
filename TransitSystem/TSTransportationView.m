@@ -169,6 +169,8 @@
     self.headImage = nil;
     self.carImage = nil;
     self.infoTableView = nil;
+    
+    [super dealloc];
 }
 
 

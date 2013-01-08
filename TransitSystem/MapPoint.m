@@ -26,6 +26,8 @@
 - (void)dealloc {
     self.subTitle = nil;
     self.title = nil;
+    
+    [super dealloc];
 }
 
 @end

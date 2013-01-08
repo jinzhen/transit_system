@@ -188,6 +188,8 @@
 - (void)dealloc {
     self.map = nil;
     self.menu = nil;
+    
+    [super dealloc];
 }
 
 @end

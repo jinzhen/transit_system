@@ -182,6 +182,8 @@
 - (void)dealloc {
     self.userName = nil;
     self.userPassword = nil;
+    
+    [super dealloc];
 }
 
 @end

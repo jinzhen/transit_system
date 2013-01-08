@@ -43,6 +43,8 @@
 		EEA25FD0169BC57500C3ACF3 /* TSTransportationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FCF169BC57500C3ACF3 /* TSTransportationView.m */; };
 		EEA25FD4169BC74B00C3ACF3 /* DriverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */; };
 		EEA25FD7169BFDB500C3ACF3 /* IntegrityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FD6169BFDB500C3ACF3 /* IntegrityView.m */; };
+		EEA25FDB169C093400C3ACF3 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FDA169C093400C3ACF3 /* AsyncSocket.m */; };
+		EEA25FDD169C0E0E00C3ACF3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA25FDC169C0E0E00C3ACF3 /* CFNetwork.framework */; };
 		EEA60617169AC6460016D2E5 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60616169AC6460016D2E5 /* search.png */; };
 		EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60619169AC9480016D2E5 /* menu_down.png */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,9 @@
 		EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverInfo.m; sourceTree = "<group>"; };
 		EEA25FD5169BFDB500C3ACF3 /* IntegrityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrityView.h; sourceTree = "<group>"; };
 		EEA25FD6169BFDB500C3ACF3 /* IntegrityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegrityView.m; sourceTree = "<group>"; };
+		EEA25FD9169C093400C3ACF3 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = opensource/AsyncSocket.h; sourceTree = "<group>"; };
+		EEA25FDA169C093400C3ACF3 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = opensource/AsyncSocket.m; sourceTree = "<group>"; };
+		EEA25FDC169C0E0E00C3ACF3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EEA60616169AC6460016D2E5 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = images/search.png; sourceTree = SOURCE_ROOT; };
 		EEA60619169AC9480016D2E5 /* menu_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_down.png; path = images/mapview_images/menu_down.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA25FDD169C0E0E00C3ACF3 /* CFNetwork.framework in Frameworks */,
 				EE99546C1697D5E80069FA45 /* CoreLocation.framework in Frameworks */,
 				EE9954691697D5DE0069FA45 /* MapKit.framework in Frameworks */,
 				EE2D55F1169688BF007D5E52 /* UIKit.framework in Frameworks */,
@@ -184,6 +190,7 @@
 		EE2D55E1169688BF007D5E52 = {
 			isa = PBXGroup;
 			children = (
+				EEA25FDC169C0E0E00C3ACF3 /* CFNetwork.framework */,
 				EE99546B1697D5E80069FA45 /* CoreLocation.framework */,
 				EE9954681697D5DE0069FA45 /* MapKit.framework */,
 				EE2D55F6169688BF007D5E52 /* TransitSystem */,
@@ -213,6 +220,7 @@
 		EE2D55F6169688BF007D5E52 /* TransitSystem */ = {
 			isa = PBXGroup;
 			children = (
+				EEA25FD8169C091900C3ACF3 /* OpenSource */,
 				EE1AF7591697EF150043243D /* PublicView */,
 				EE2D56241696B867007D5E52 /* images */,
 				EE2D560E16968955007D5E52 /* DataSrc */,
@@ -280,6 +288,15 @@
 				EE1AF7481697EB880043243D /* login_images */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		EEA25FD8169C091900C3ACF3 /* OpenSource */ = {
+			isa = PBXGroup;
+			children = (
+				EEA25FD9169C093400C3ACF3 /* AsyncSocket.h */,
+				EEA25FDA169C093400C3ACF3 /* AsyncSocket.m */,
+			);
+			name = OpenSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +393,7 @@
 				EEA25FD0169BC57500C3ACF3 /* TSTransportationView.m in Sources */,
 				EEA25FD4169BC74B00C3ACF3 /* DriverInfo.m in Sources */,
 				EEA25FD7169BFDB500C3ACF3 /* IntegrityView.m in Sources */,
+				EEA25FDB169C093400C3ACF3 /* AsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +463,7 @@
 		EE2D560B169688C0007D5E52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TransitSystem/TransitSystem-Prefix.pch";
 				INFOPLIST_FILE = "TransitSystem/TransitSystem-Info.plist";
@@ -456,6 +475,7 @@
 		EE2D560C169688C0007D5E52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TransitSystem/TransitSystem-Prefix.pch";
 				INFOPLIST_FILE = "TransitSystem/TransitSystem-Info.plist";

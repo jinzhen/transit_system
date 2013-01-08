@@ -62,6 +62,8 @@
 
 - (void)dealloc {
     self.imageView = nil;
+    
+    [super dealloc];
 }
 
 @end
@@ -106,6 +108,8 @@
 
 - (void)dealloc {
     self.imageViewItems = nil;
+    
+    [super dealloc];
 }
 
 @end
