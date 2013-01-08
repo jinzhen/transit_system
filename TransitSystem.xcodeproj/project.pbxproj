@@ -47,6 +47,7 @@
 		EEA25FDD169C0E0E00C3ACF3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA25FDC169C0E0E00C3ACF3 /* CFNetwork.framework */; };
 		EEA25FE0169C116D00C3ACF3 /* DataTransmission.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FDF169C116D00C3ACF3 /* DataTransmission.m */; };
 		EEA25FE3169C1A8400C3ACF3 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FE2169C1A8400C3ACF3 /* AsyncUdpSocket.m */; };
+		EEA25FE6169C30A700C3ACF3 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA25FE4169C26A600C3ACF3 /* app_icon.png */; };
 		EEA60617169AC6460016D2E5 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60616169AC6460016D2E5 /* search.png */; };
 		EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60619169AC9480016D2E5 /* menu_down.png */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		EEA25FDF169C116D00C3ACF3 /* DataTransmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTransmission.m; sourceTree = "<group>"; };
 		EEA25FE1169C1A8400C3ACF3 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
 		EEA25FE2169C1A8400C3ACF3 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		EEA25FE4169C26A600C3ACF3 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
 		EEA60616169AC6460016D2E5 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = images/search.png; sourceTree = SOURCE_ROOT; };
 		EEA60619169AC9480016D2E5 /* menu_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_down.png; path = images/mapview_images/menu_down.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 		EE2D55E1169688BF007D5E52 = {
 			isa = PBXGroup;
 			children = (
+				EEA25FE4169C26A600C3ACF3 /* app_icon.png */,
 				EEA25FDC169C0E0E00C3ACF3 /* CFNetwork.framework */,
 				EE99546B1697D5E80069FA45 /* CoreLocation.framework */,
 				EE9954681697D5DE0069FA45 /* MapKit.framework */,
@@ -376,6 +379,7 @@
 				EEA60617169AC6460016D2E5 /* search.png in Resources */,
 				EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */,
 				EEA25FCA169BBAC800C3ACF3 /* taxi.png in Resources */,
+				EEA25FE6169C30A700C3ACF3 /* app_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
