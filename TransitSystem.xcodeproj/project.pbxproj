@@ -42,6 +42,7 @@
 		EEA25FCD169BBD8C00C3ACF3 /* TSAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FCC169BBD8C00C3ACF3 /* TSAnnotationView.m */; };
 		EEA25FD0169BC57500C3ACF3 /* TSTransportationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FCF169BC57500C3ACF3 /* TSTransportationView.m */; };
 		EEA25FD4169BC74B00C3ACF3 /* DriverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */; };
+		EEA25FD7169BFDB500C3ACF3 /* IntegrityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FD6169BFDB500C3ACF3 /* IntegrityView.m */; };
 		EEA60617169AC6460016D2E5 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60616169AC6460016D2E5 /* search.png */; };
 		EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60619169AC9480016D2E5 /* menu_down.png */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,8 @@
 		EEA25FD1169BC6FD00C3ACF3 /* TSTransportationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTransportationView.h; sourceTree = "<group>"; };
 		EEA25FD2169BC74B00C3ACF3 /* DriverInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverInfo.h; sourceTree = "<group>"; };
 		EEA25FD3169BC74B00C3ACF3 /* DriverInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverInfo.m; sourceTree = "<group>"; };
+		EEA25FD5169BFDB500C3ACF3 /* IntegrityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrityView.h; sourceTree = "<group>"; };
+		EEA25FD6169BFDB500C3ACF3 /* IntegrityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegrityView.m; sourceTree = "<group>"; };
 		EEA60616169AC6460016D2E5 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = images/search.png; sourceTree = SOURCE_ROOT; };
 		EEA60619169AC9480016D2E5 /* menu_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_down.png; path = images/mapview_images/menu_down.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -131,6 +134,8 @@
 				EEA25FCC169BBD8C00C3ACF3 /* TSAnnotationView.m */,
 				EEA25FD1169BC6FD00C3ACF3 /* TSTransportationView.h */,
 				EEA25FCF169BC57500C3ACF3 /* TSTransportationView.m */,
+				EEA25FD5169BFDB500C3ACF3 /* IntegrityView.h */,
+				EEA25FD6169BFDB500C3ACF3 /* IntegrityView.m */,
 			);
 			name = subView;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				EEA25FCD169BBD8C00C3ACF3 /* TSAnnotationView.m in Sources */,
 				EEA25FD0169BC57500C3ACF3 /* TSTransportationView.m in Sources */,
 				EEA25FD4169BC74B00C3ACF3 /* DriverInfo.m in Sources */,
+				EEA25FD7169BFDB500C3ACF3 /* IntegrityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
