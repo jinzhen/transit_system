@@ -10,6 +10,7 @@
 #import "TSNavigationController.h"
 #import "TSCommonAnimations.h"
 #import "TSMapViewMenu.h"
+#import "MapPoint.h"
 
 #define MENU_TAG 111111
 
@@ -32,7 +33,8 @@
     [TSNavigationController setNavigationBarRightButton:self withImage:[UIImage imageNamed:@"menu_up.png" ] action:@selector(handleMenu)];
     
     self.map = [[MKMapView alloc] initWithFrame:[self.view bounds]];
-//    self.map.showsUserLocation = YES;
+    self.map.showsUserLocation = YES;
+    self.map.delegate = self;
     self.map.mapType =MKMapTypeStandard;
     [self.view addSubview:self.map];
     
@@ -44,6 +46,34 @@
     
     [self createMenuView];
 }
+
+
+/*
+ We need to zoom into the location to get more details. This can be easily accomplished by using the following implementation
+ */
+//- (void)mapView:(MKMapView *)mv didAddAnnotationViews:(NSArray *)views
+//{
+//    MKAnnotationView *annotationView = [views objectAtIndex:0];
+//    id<MKAnnotation> mp = [annotationView annotation];
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,250,250);
+//    
+//    [mv setRegion:region animated:YES];
+//}
+
+- (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    CLLocationCoordinate2D userCoordinate = userLocation.location.coordinate;
+    for(int i = 1; i <= 5; i++)
+    {
+        CGFloat latDelta = rand()*.035/RAND_MAX -.02;
+        CGFloat longDelta = rand()*.03/RAND_MAX -.015;
+        CLLocationCoordinate2D newCoord = { userCoordinate.latitude + latDelta, userCoordinate.longitude + longDelta };
+        MapPoint *mp = [[MapPoint alloc] initWithCoordinate:newCoord title:[NSString stringWithFormat:@"Taxi(%d)",i] subTitle:@"The taxi is ..."];
+        [mv addAnnotation:mp];
+    }
+}
+
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     [self.locationManager stopUpdatingLocation];

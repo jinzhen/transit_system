@@ -37,6 +37,7 @@
 		EE2D56231696AE4B007D5E52 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2D56221696AE4B007D5E52 /* SettingViewController.m */; };
 		EE9954691697D5DE0069FA45 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9954681697D5DE0069FA45 /* MapKit.framework */; };
 		EE99546C1697D5E80069FA45 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE99546B1697D5E80069FA45 /* CoreLocation.framework */; };
+		EEA25FC7169BADA800C3ACF3 /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA25FC6169BADA800C3ACF3 /* MapPoint.m */; };
 		EEA60617169AC6460016D2E5 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60616169AC6460016D2E5 /* search.png */; };
 		EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60619169AC9480016D2E5 /* menu_down.png */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,8 @@
 		EE2D56221696AE4B007D5E52 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		EE9954681697D5DE0069FA45 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EE99546B1697D5E80069FA45 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EEA25FC5169BADA800C3ACF3 /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPoint.h; sourceTree = "<group>"; };
+		EEA25FC6169BADA800C3ACF3 /* MapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPoint.m; sourceTree = "<group>"; };
 		EEA60616169AC6460016D2E5 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = images/search.png; sourceTree = SOURCE_ROOT; };
 		EEA60619169AC9480016D2E5 /* menu_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_down.png; path = images/mapview_images/menu_down.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -111,6 +114,8 @@
 			children = (
 				EE114316169A7C2F002B75AA /* TSMapViewMenu.h */,
 				EE114317169A7C2F002B75AA /* TSMapViewMenu.m */,
+				EEA25FC5169BADA800C3ACF3 /* MapPoint.h */,
+				EEA25FC6169BADA800C3ACF3 /* MapPoint.m */,
 			);
 			name = subView;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				EE1AF75C1697EFAF0043243D /* TSNavigationController.m in Sources */,
 				EE114313169A6F13002B75AA /* TSCommonAnimations.m in Sources */,
 				EE114318169A7C2F002B75AA /* TSMapViewMenu.m in Sources */,
+				EEA25FC7169BADA800C3ACF3 /* MapPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
