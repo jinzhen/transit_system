@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AsyncSocket.h"
 
-@interface Login : UIViewController<UITextFieldDelegate, UIScrollViewDelegate> {
+@interface Login : UIViewController<UITextFieldDelegate, UIScrollViewDelegate, AsyncSocketDelegate> {
     NSString *_userName;
     NSString *_userPassword;
     int32_t userID;

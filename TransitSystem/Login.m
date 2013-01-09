@@ -9,6 +9,8 @@
 #import "Login.h"
 #import "MapViewController.h"
 #import "TSNavigationController.h"
+#import "DataTransmission.h"
+#import "AsyncSocket.h"
 
 #define SYSTEMINFOTEXTVIEW_TAG 111111
 #define USER_NAME_TEXTVIEW 111114
@@ -155,10 +157,23 @@
 
 - (void)handleLogin {
     [self hidenKeyBoard];
+    
+    AsyncSocket *socket = [[AsyncSocket alloc] initWithDelegate:self];
+    NSError *error = nil;
+    [socket connectToHost:@"127.0.0.1" onPort:8000 withTimeout:3.0 error:&error];
+    if (error) {
+        NSLog(@"socket error : %@", [error domain]);
+    }
+    NSData *data = [@"I'm TS client, how are you?" dataUsingEncoding: NSUTF8StringEncoding];
+    [socket writeData:data withTimeout:3 tag:100];
 
     MapViewController *mapViewController = [[MapViewController alloc] init];
     [self.navigationController pushViewController:mapViewController animated:YES];
     
+}
+
+- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
+    NSLog(@"that's good! we can connect the host now.");
 }
 
 - (void)hidenKeyBoard {
@@ -177,6 +192,16 @@
     textField.secureTextEntry = YES;
     
     return YES;
+}
+
+- (BOOL)isAuthenticationSucceed {
+    AsyncSocket *socket = [[AsyncSocket alloc] initWithDelegate:self];
+    
+    [socket connectToHost:@"127.0.0.1" onPort:8000 withTimeout:3.0 error:nil];
+    NSData *data = [@"I'm TS client, how are you?" dataUsingEncoding: NSUTF8StringEncoding];
+    [socket writeData:data withTimeout:3 tag:100];
+    
+    return NO;
 }
 
 - (void)dealloc {

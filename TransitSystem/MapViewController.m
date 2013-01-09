@@ -99,27 +99,27 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
-//    CGRect visibleRect = [mapView annotationVisibleRect];
-//
-//    for(MKAnnotationView *view in views){
-//
-//        if([view isKindOfClass:[TSAnnotationView class]]){
-//
-//            CGRect endFrame = view.frame;
-//
-//            CGRect startFrame = endFrame;
-//            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height;
-//            view.frame = startFrame;
-//            [UIView beginAnimations:@"drop" context:NULL];
-//            [UIView setAnimationDuration:2];
-//            view.frame = endFrame;
-//            [UIView commitAnimations];
-//        }
-//    }
-//    MKAnnotationView *annotationView = [views objectAtIndex:0];
-//    id<MKAnnotation> mp = [annotationView annotation];
-//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,500,500);
-//    [self.map setRegion:region animated:YES];
+    CGRect visibleRect = [mapView annotationVisibleRect];
+
+    for(MKAnnotationView *view in views){
+
+        if([view isKindOfClass:[TSAnnotationView class]]){
+
+            CGRect endFrame = view.frame;
+
+            CGRect startFrame = endFrame;
+            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height;
+            view.frame = startFrame;
+            [UIView beginAnimations:@"drop" context:NULL];
+            [UIView setAnimationDuration:2];
+            view.frame = endFrame;
+            [UIView commitAnimations];
+        }
+    }
+    MKAnnotationView *annotationView = [views objectAtIndex:0];
+    id<MKAnnotation> mp = [annotationView annotation];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,50,50);
+    [self.map setRegion:region animated:YES];
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
