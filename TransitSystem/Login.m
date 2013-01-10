@@ -174,6 +174,9 @@
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
     NSLog(@"that's good! we can connect the host now.");
+    NSData *data = [[NSData alloc] init];
+    [sock readDataToData:data withTimeout:3 tag:1];
+    NSLog(@"%@", data.description);
 }
 
 - (void)hidenKeyBoard {
