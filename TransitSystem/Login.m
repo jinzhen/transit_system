@@ -116,6 +116,8 @@
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"back_image.png"]];
     self.view.backgroundColor = background;
     [self.view addSubview:scrollView];
+    
+    [NSThread detachNewThreadSelector:@selector(getHeartBeatBag) toTarget:self withObject:nil];
 }
 
 - (void)handleTapRecoginizer:(UITapGestureRecognizer *)tap {
@@ -155,6 +157,21 @@
     
 }
 
+- (void)getHeartBeatBag {
+    AsyncSocket *socket = [[AsyncSocket alloc] initWithDelegate:self];
+    NSError *error = nil;
+    [socket connectToHost:@"127.0.0.1" onPort:8000 withTimeout:3.0 error:&error];
+    if (error) {
+        NSLog(@"socket error : %@", [error domain]);
+    }
+
+    NSData *data = [@"0" dataUsingEncoding: NSUTF8StringEncoding];
+    [socket writeData:data withTimeout:3 tag:100];
+    [data release];
+    
+    
+}
+
 - (void)handleLogin {
     [self hidenKeyBoard];
     
@@ -164,7 +181,7 @@
     if (error) {
         NSLog(@"socket error : %@", [error domain]);
     }
-    NSData *data = [@"I'm TS client, how are you?" dataUsingEncoding: NSUTF8StringEncoding];
+    NSData *data = [@"0" dataUsingEncoding: NSUTF8StringEncoding];
     [socket writeData:data withTimeout:3 tag:100];
 
     MapViewController *mapViewController = [[MapViewController alloc] init];
@@ -173,9 +190,13 @@
 }
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
-    NSLog(@"that's good! we can connect the host now.");
     NSData *data = [[NSData alloc] init];
     [sock readDataToData:data withTimeout:3 tag:1];
+    if ([data.description isEqualToString:@"HB"]) {
+        NSLog(@"%@", data.description);
+        NSData *data = [@"0" dataUsingEncoding: NSUTF8StringEncoding];
+        [sock writeData:data withTimeout:3 tag:100];
+    }
     NSLog(@"%@", data.description);
 }
 
