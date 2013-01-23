@@ -11,6 +11,8 @@
 #import "TSNavigationController.h"
 #import "DataTransmission.h"
 #import "AsyncSocket.h"
+#import "TSCommon.h"
+#import "TSSocketPacket.h"
 
 #define SYSTEMINFOTEXTVIEW_TAG 111111
 #define USER_NAME_TEXTVIEW 111114
@@ -19,6 +21,7 @@
 #define LOGIN_BUTTON_TAG 111116
 #define REGISTER_BUTTON_TAG 111117
 #define FORGET_PASSWORD_BUTTON_TAG 111118
+#define SCROLL_VIEW 111119
 
 @implementation Login
 @synthesize userName = _userName;
@@ -26,7 +29,9 @@
 
 - (id)init {
     if (self = [super init]) {
-        
+        _socket = [[AsyncSocket alloc] initWithDelegate:self];
+        isBeatting = YES;
+        overRepeatTime = 0;
     }
     
     return self;
@@ -42,7 +47,7 @@
     [scrollView setContentSize:CGSizeMake(320, 580)];
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.delegate = self;
-    
+    scrollView.tag = SCROLL_VIEW;
 
     UILabel *systemInfoTextView = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 100)];
     [systemInfoTextView setBackgroundColor:[UIColor clearColor]];
@@ -116,8 +121,6 @@
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"back_image.png"]];
     self.view.backgroundColor = background;
     [self.view addSubview:scrollView];
-    
-    [NSThread detachNewThreadSelector:@selector(getHeartBeatBag) toTarget:self withObject:nil];
 }
 
 - (void)handleTapRecoginizer:(UITapGestureRecognizer *)tap {
@@ -157,47 +160,99 @@
     
 }
 
-- (void)getHeartBeatBag {
-    AsyncSocket *socket = [[AsyncSocket alloc] initWithDelegate:self];
-    NSError *error = nil;
-    [socket connectToHost:@"127.0.0.1" onPort:8000 withTimeout:3.0 error:&error];
-    if (error) {
-        NSLog(@"socket error : %@", [error domain]);
+- (BOOL)connectToHost {
+    
+    if ([_socket isConnected]) {
+        return YES;
     }
+    NSError *error = nil;
+    if(![_socket connectToHost:@"127.0.0.1" onPort:8000 error:&error])
+    {
+        NSLog(@"Error: %@", error);
+        return NO;
+    }
+    return YES;
+}
 
-    NSData *data = [@"0" dataUsingEncoding: NSUTF8StringEncoding];
-    [socket writeData:data withTimeout:3 tag:100];
-    [data release];
+- (void)sendHeartBeatBag {
     
-    
+    if (isBeatting) {
+        [TSCommon sendDataToServerWith:_socket type:0 data:[[TSCommon getIPAddress] dataUsingEncoding:NSUTF8StringEncoding]];
+        isBeatting = NO;
+        overRepeatTime = 0;
+    }else {
+        if (3 < overRepeatTime++) {
+            //TODO
+        }
+    }
 }
 
 - (void)handleLogin {
     [self hidenKeyBoard];
-    
-    AsyncSocket *socket = [[AsyncSocket alloc] initWithDelegate:self];
-    NSError *error = nil;
-    [socket connectToHost:@"127.0.0.1" onPort:8000 withTimeout:3.0 error:&error];
-    if (error) {
-        NSLog(@"socket error : %@", [error domain]);
+    if (![self connectToHost]) {
+        NSLog(@"Your netWord is disable!");
     }
-    NSData *data = [@"0" dataUsingEncoding: NSUTF8StringEncoding];
-    [socket writeData:data withTimeout:3 tag:100];
-
-    MapViewController *mapViewController = [[MapViewController alloc] init];
-    [self.navigationController pushViewController:mapViewController animated:YES];
+    
+    UIScrollView *scrollView = (UIScrollView *)[self.view viewWithTag:SCROLL_VIEW];
+    UITextField *userName = (UITextField *)[scrollView viewWithTag:USER_NAME_TEXTVIEW];
+    UITextField *password = (UITextField *)[scrollView viewWithTag:USER_PASSWORD_TEXTVIEW];
+    if (![userName.text isEqualToString:@""] && ![userName.text isEqualToString:@"Your name"]) {
+        if (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"Your password"]) {
+            NSString *content = [NSString stringWithFormat:@"%@%@", userName.text, password.text];
+            NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+            [TSCommon sendDataToServerWith:_socket type:1 data:data];
+        }else {
+            [password setText:@"INCORRECT"];
+        }
+    }else {
+        [userName setText:@"INCORRECT"];
+    }
     
 }
 
-- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
-    NSData *data = [[NSData alloc] init];
-    [sock readDataToData:data withTimeout:3 tag:1];
-    if ([data.description isEqualToString:@"HB"]) {
-        NSLog(@"%@", data.description);
-        NSData *data = [@"0" dataUsingEncoding: NSUTF8StringEncoding];
-        [sock writeData:data withTimeout:3 tag:100];
+
+- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
+{
+    if (8000 == port) {
+        _time = [NSTimer scheduledTimerWithTimeInterval:10
+                                                 target:self
+                                               selector:@selector(sendHeartBeatBag)
+                                               userInfo:nil
+                                                repeats:YES];
     }
-    NSLog(@"%@", data.description);
+    
+}
+-(void) onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+    if (!data) {
+        return ;
+    }
+    
+    if ([TSCommon isHeartBeatPacket:data]) {
+        isBeatting = YES;
+    }else if ([TSCommon isUserInformation:data]) {
+        // login succeed.
+    }else {
+        //other data.
+    }
+}
+
+- (void)onSocket:(AsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag {
+    
+}
+
+- (void)onSocket:(AsyncSocket *)sock didSecure:(BOOL)flag
+{
+    NSLog(@"onSocket:%p didSecure:YES", sock);
+}
+- (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err
+{
+    NSLog(@"onSocket:%p willDisconnectWithError:%@", sock, err);
+}
+- (void)onSocketDidDisconnect:(AsyncSocket *)sock
+{
+    //断开连接了
+    NSLog(@"onSocketDidDisconnect:%p", sock);
 }
 
 - (void)hidenKeyBoard {
@@ -216,16 +271,6 @@
     textField.secureTextEntry = YES;
     
     return YES;
-}
-
-- (BOOL)isAuthenticationSucceed {
-    AsyncSocket *socket = [[AsyncSocket alloc] initWithDelegate:self];
-    
-    [socket connectToHost:@"127.0.0.1" onPort:8000 withTimeout:3.0 error:nil];
-    NSData *data = [@"I'm TS client, how are you?" dataUsingEncoding: NSUTF8StringEncoding];
-    [socket writeData:data withTimeout:3 tag:100];
-    
-    return NO;
 }
 
 - (void)dealloc {

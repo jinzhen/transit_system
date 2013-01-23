@@ -14,6 +14,11 @@
     NSString *_userPassword;
     int32_t userID;
     
+    NSTimer *_time;
+    AsyncSocket *_socket;
+    
+    BOOL isBeatting;
+    int overRepeatTime;
 }
 
 @property (nonatomic, retain)NSString *userName;
