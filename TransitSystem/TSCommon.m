@@ -68,7 +68,7 @@
 
 + (BOOL)isUserInformation:(NSData *)data {
     TSSocketPacket *packet = [self splitSocketPacket:data];
-    if (1 == packet.socketPacketType) {
+    if ('1' == packet.socketPacketType) {
         return YES;
     }
     return NO;
@@ -80,6 +80,10 @@
     
     [socket writeData:[packet getFormatSocktPacketData] withTimeout:3 tag:100];
     [packet release];
+}
+
++ (void)recvDataFromServerWith:(AsyncSocket *)socket {
+    [socket readDataWithTimeout:3 tag:1];
 }
 
 

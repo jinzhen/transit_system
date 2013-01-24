@@ -19,5 +19,6 @@
 + (BOOL)isHeartBeatPacket:(NSData *)data;
 + (BOOL)isUserInformation:(NSData *)data;
 + (void)sendDataToServerWith:(AsyncSocket *)socket type:(uint8_t)type data:(NSData *)data;
++ (void)recvDataFromServerWith:(AsyncSocket *)socket;
 
 @end

@@ -180,6 +180,7 @@
         [TSCommon sendDataToServerWith:_socket type:0 data:[[TSCommon getIPAddress] dataUsingEncoding:NSUTF8StringEncoding]];
         isBeatting = NO;
         overRepeatTime = 0;
+        [TSCommon recvDataFromServerWith:_socket];
     }else {
         if (3 < overRepeatTime++) {
             //TODO
@@ -201,6 +202,7 @@
             NSString *content = [NSString stringWithFormat:@"%@%@", userName.text, password.text];
             NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
             [TSCommon sendDataToServerWith:_socket type:1 data:data];
+            [TSCommon recvDataFromServerWith:_socket];
         }else {
             [password setText:@"INCORRECT"];
         }
@@ -228,10 +230,14 @@
         return ;
     }
     
+    NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", dataStr);
+    
     if ([TSCommon isHeartBeatPacket:data]) {
         isBeatting = YES;
     }else if ([TSCommon isUserInformation:data]) {
-        // login succeed.
+        MapViewController *map = [[MapViewController alloc] init];
+        [self.navigationController pushViewController:map animated:YES];
     }else {
         //other data.
     }
