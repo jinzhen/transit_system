@@ -13,6 +13,7 @@
 #import "AsyncSocket.h"
 #import "TSCommon.h"
 #import "TSSocketPacket.h"
+#import "TSToast.h"
 
 #define SYSTEMINFOTEXTVIEW_TAG 111111
 #define USER_NAME_TEXTVIEW 111114
@@ -182,8 +183,8 @@
         overRepeatTime = 0;
         [TSCommon recvDataFromServerWith:_socket];
     }else {
-        if (3 < overRepeatTime++) {
-            //TODO
+        if (3 < overRepeatTime++ && overRepeatTime < 6) {
+            [TSToast showWithText:@"The netword isn't connect!" duration:5.0f];
         }
     }
 }

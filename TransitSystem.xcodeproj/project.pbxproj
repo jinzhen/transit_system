@@ -52,6 +52,7 @@
 		EEA6061A169AC9480016D2E5 /* menu_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA60619169AC9480016D2E5 /* menu_down.png */; };
 		EEA8B93016AF74B00036CE63 /* TSCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA8B92F16AF74B00036CE63 /* TSCommon.m */; };
 		EEA8B93416AF76280036CE63 /* TSSocketPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA8B93316AF76280036CE63 /* TSSocketPacket.m */; };
+		EEB1945816B0DDE100EEC892 /* TSToast.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB1945716B0DDE100EEC892 /* TSToast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,8 @@
 		EEA8B93216AF76280036CE63 /* TSSocketPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSocketPacket.h; sourceTree = "<group>"; };
 		EEA8B93316AF76280036CE63 /* TSSocketPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSocketPacket.m; sourceTree = "<group>"; };
 		EEA8B94916AFEA540036CE63 /* DefineContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineContent.h; sourceTree = "<group>"; };
+		EEB1945616B0DDE100EEC892 /* TSToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSToast.h; sourceTree = "<group>"; };
+		EEB1945716B0DDE100EEC892 /* TSToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 			children = (
 				EE1AF75A1697EFAF0043243D /* TSNavigationController.h */,
 				EE1AF75B1697EFAF0043243D /* TSNavigationController.m */,
+				EEB1945616B0DDE100EEC892 /* TSToast.h */,
+				EEB1945716B0DDE100EEC892 /* TSToast.m */,
 			);
 			name = PublicView;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				EEA25FE3169C1A8400C3ACF3 /* AsyncUdpSocket.m in Sources */,
 				EEA8B93016AF74B00036CE63 /* TSCommon.m in Sources */,
 				EEA8B93416AF76280036CE63 /* TSSocketPacket.m in Sources */,
+				EEB1945816B0DDE100EEC892 /* TSToast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
